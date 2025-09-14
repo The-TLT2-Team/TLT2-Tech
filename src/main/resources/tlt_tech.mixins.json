@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "package": "com.fg.tlt_tech.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "tltmod.refmap.json",
+  "mixins": [
+    "immersive.ArcFurnaceRecipeMixin",
+    "immersive.IMultiblockRecipeAccessor",
+    "immersive.MineralVeinMixin",
+    "mekanism.FissionReactorValidatorMixin",
+    "pnc.AbstractAirHandlingBlockEntityMixin",
+    "pnc.AirGrateMixin",
+    "pnc.ApplicableUpgradesDBMixin",
+    "pnc.HeatFrameMixin",
+    "pnc.MachineAirHandlerMixin",
+    "pnc.PressureTubeBlockEntityMixin",
+    "thermal.AugmentableBlockEntityMixin",
+    "thermal.DeviceBlockEntityMixin",
+    "thermal.MachineBlockEntityMixin",
+    "thermal.MachinePropertiesMixin",
+    "thermal.ThermalAugmentRulesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

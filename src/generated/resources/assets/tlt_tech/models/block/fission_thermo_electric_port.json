@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tlt_tech:block/fission_thermo_electric_port"
+  }
+}

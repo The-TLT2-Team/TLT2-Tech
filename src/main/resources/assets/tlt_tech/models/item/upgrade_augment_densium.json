@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tlt_tech:item/thermal/upgrade_augment_densium",
+    "layer1": "tlt_tech:item/thermal/upgrade_augment_lights",
+    "layer2": "tlt_tech:item/thermal/upgrade_augment_anim"
+  }
+}

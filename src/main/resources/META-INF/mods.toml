@@ -3,20 +3,20 @@ loaderVersion = "${loader_version_range}"
 license = "GPL"
 
 [[mods]]
-modId = "tltmod"
-version = "1.0.0"
-displayName = "TlT Mod"
+modId = "tlt_tech"
+version = "${mod_version}"
+displayName = "TLT Tech"
 authors = "fg"
-description = '''TlT Mod.'''
+description = '''TLT2 专用科技魔改模组'''
 
-[[dependencies.tltmod]]
+[[dependencies.tlt_tech]]
 modId = "forge"
 mandatory = true
 versionRange = "[47,)"
 ordering = "AFTER"
 side = "BOTH"
 
-[[dependencies.tltmod]]
+[[dependencies.tlt_tech]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.20.1,1.21)"

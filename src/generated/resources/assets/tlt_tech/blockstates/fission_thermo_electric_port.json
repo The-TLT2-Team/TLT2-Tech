@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tlt_tech:block/fission_thermo_electric_port"
+    }
+  }
+}

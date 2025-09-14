@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "tlt_tech:block/dry_state_fuel_filler"
+  }
+}

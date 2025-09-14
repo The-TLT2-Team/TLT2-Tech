@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tlt_tech:block/dry_state_waste_extractor"
+    }
+  }
+}

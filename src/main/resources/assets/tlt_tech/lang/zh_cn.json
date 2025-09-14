@@ -1,0 +1,44 @@
+{
+  "itemGroup.tlt_tech.misc": "TLT-科技",
+
+
+
+  "block.tlt_tech.dry_state_fuel_filler": "裂变干态燃料加注口",
+  "block.tlt_tech.dry_state_waste_extractor": "裂变干态废料提取口",
+  "block.tlt_tech.fission_neutron_collect_port": "裂变中子素提取口",
+  "block.tlt_tech.fission_thermo_electric_port": "裂变热电转换接口",
+
+
+
+  "item.tlt_tech.reactive_nuclear_waste": "高活性干态核废料",
+  "item.tlt_tech.fu_dust": "氟铀粉",
+  "item.tlt_tech.ck_indused_fu_dust": "氟铀碳钾粉",
+
+  "item.tlt_tech.upgrade_augment_pneumatic": "气锻整合组件",
+  "item.tlt_tech.upgrade_augment_densium": "致密整合组件",
+  "item.tlt_tech.upgrade_augment_activated_chroma": "活化彩钢整合组件",
+
+  "item.tlt_tech.dynamo_upgrade_1": "离子燃烧组件",
+  "item.tlt_tech.dynamo_upgrade_2": "业火燃烧组件",
+  "item.tlt_tech.machine_catalyst_upgrade_1": "注能催化组件",
+  "item.tlt_tech.machine_catalyst_upgrade_2": "高能催化组件",
+  "item.tlt_tech.machine_speed_upgrade_1": "能效增幅组件",
+  "item.tlt_tech.machine_speed_upgrade_2": "神能增幅组件",
+  "item.tlt_tech.range_upgrade_1": "高级范围组件",
+  "item.tlt_tech.range_upgrade_2": "特级范围组件",
+  "item.tlt_tech.machine_speed_upgrade_inf": "神匠增幅组件",
+  "item.tlt_tech.dynamo_upgrade_inf": "神匠燃烧组件",
+
+  "item.tlt_tech.advanced_safety_upgrade": "超级安全升级",
+
+
+
+  "tlt.tooltip.dry_state_fuel_filler": "一种能放置在裂变反应堆上的特殊端口，能把物品形式的原料直接直接转化为裂变燃料输入反应堆。",
+  "tlt.tooltip.dry_state_waste_extractor": "一种能放置在裂变反应堆上的特殊端口，能把裂变反应堆产出的核废料浓缩成物品随后输出。",
+  "tlt.tooltip.fission_neutron_collect_port": "一种能放置在裂变反应堆上的特殊端口，能在燃烧燃料时生成中子素锭并且冷却反应堆，每燃烧1000燃料输出1中子素锭，反应堆温度越高冷却速度越快。",
+  "tlt.tooltip.fission_thermo_electric_port": "一种能放置在裂变反应堆上的特殊端口，能立刻将裂变堆内的热量转换为能量并瞬间冷却裂变堆。",
+
+
+
+  "info.thermal.augment.attr.MachineParallel": "最大并行数"
+}

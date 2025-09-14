@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tlt_tech:item/misc/machine_speed_upgrade_inf"
+  }
+}
