@@ -14,9 +14,9 @@ public class AutomaticTool extends AutoShot {
     @Override
     public void modifierOnInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         super.modifierOnInventoryTick(tool,modifier,world,holder,itemSlot,isSelected,isCorrectSlot,stack);
-        if (holder instanceof Player player){
+        if (holder instanceof Player player&&isSelected){
             DistExecutor.unsafeRunForDist(()->()->{
-                if (player.getAttackStrengthScale(0)>=0.98){
+                if (player.getAttackStrengthScale(player.getCurrentItemAttackStrengthDelay()<2?1:0)>=1){
                     ClientUtils.doLeftClickAttack();
                 }
                 return null;

@@ -1,6 +1,8 @@
 package com.fg.tlt_tech;
 
+import cofh.thermal.core.common.config.ThermalCoreConfig;
 import com.fg.tlt_tech.init.*;
+import com.fg.tlt_tech.network.TltTechPacketHandler;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,6 +42,9 @@ public class TltTech
             flagUniqueAugment(TltTechItems.UPGRADE_AUGMENT_5.get());
             flagUniqueAugment(TltTechItems.UPGRADE_AUGMENT_6.get());
             AUG_SCALE_MAX = Integer.MAX_VALUE;
+            ThermalCoreConfig.machineAugments = 8;
+            ThermalCoreConfig.dynamoAugments = 6;
+            TltTechPacketHandler.init();
         });
     }
 

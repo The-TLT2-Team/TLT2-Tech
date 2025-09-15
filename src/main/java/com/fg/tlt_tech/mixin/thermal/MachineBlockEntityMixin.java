@@ -35,23 +35,24 @@ public abstract class MachineBlockEntityMixin extends BlockEntityCoFH {
     @Shadow protected abstract boolean validateOutputs();
 
     @Shadow protected abstract void processOff();
-
+/*
     @Inject(method = "tickServer",at = @At("HEAD"))
     public void cancelDelay(CallbackInfo ci){
+        if (tlt_tech$delayInactive&&(!validateInputs() || !validateOutputs())) processOff();
         tlt_tech$delayInactive = false;
     }
 
     @Redirect(method = "tickServer",at = @At(value = "INVOKE", target = "Lcofh/thermal/lib/common/block/entity/MachineBlockEntity;processOff()V",ordinal = 0))
     public void delayProcessOff(MachineBlockEntity instance){
-        if (tlt_tech$delayInactive) tlt_tech$delayInactive=false;
-        else processOff();
+        if (!tlt_tech$delayInactive) processOff();
     }
 
-    @Inject(method = "tickServer",at = @At(value = "INVOKE", target = "Lcofh/thermal/lib/common/block/entity/MachineBlockEntity;transferOutput()V",ordinal = 0))
+ */
+
+    @Inject(method = "tickServer",at = @At(value = "INVOKE", target = "Lcofh/thermal/lib/common/block/entity/MachineBlockEntity;processFinish()V"))
     public void addParallelLogic(CallbackInfo ci){
         int parallel = (int) IMachinePropertiesMixin.getMaxParallel(getMachineProperties());
         if (parallel>0) {
-            tlt_tech$delayInactive = true;
             for (int i = 0; i < parallel; i++) {
                 if (!validateInputs() || !validateOutputs()) {
                     return;

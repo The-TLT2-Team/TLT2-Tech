@@ -17,8 +17,10 @@
     "pnc.PressureTubeBlockEntityMixin",
     "thermal.AugmentableBlockEntityMixin",
     "thermal.DeviceBlockEntityMixin",
+    "thermal.ItemStorageCoFHMixin",
     "thermal.MachineBlockEntityMixin",
     "thermal.MachinePropertiesMixin",
+    "thermal.Reconfigurable4WayBlockEntityMixin",
     "thermal.ThermalAugmentRulesMixin"
   ],
   "injectors": {

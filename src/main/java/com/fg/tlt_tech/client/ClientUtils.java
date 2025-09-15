@@ -1,15 +1,25 @@
 package com.fg.tlt_tech.client;
 
+import com.fg.tlt_tech.network.TltTechPacketHandler;
+import com.fg.tlt_tech.network.packet.PSyncToolPersistentDataC2S;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
 public class ClientUtils {
     public static void doLeftClickAttack(){
-        if (Minecraft.getInstance().options.keyAttack.isDown()) startAttack(Minecraft.getInstance());
+        if (isLeftClickDown()) startAttack(Minecraft.getInstance());
+    }
+    public static boolean isLeftClickDown(){
+        return Minecraft.getInstance().options.keyAttack.isDown();
+    }
+    public static void syncToolDataToServer(IToolStackView tool, EquipmentSlot slot){
+        TltTechPacketHandler.sendToServer(new PSyncToolPersistentDataC2S(tool.getPersistentData().getCopy(),slot));
     }
 
     public static void startAttack(Minecraft minecraft){
