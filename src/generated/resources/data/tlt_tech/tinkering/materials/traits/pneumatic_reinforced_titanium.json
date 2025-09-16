@@ -1,0 +1,28 @@
+{
+  "default": [
+    {
+      "level": 2,
+      "name": "etstlib:aerial_reinforced"
+    },
+    {
+      "level": 1,
+      "name": "tlt_tech:pneumatic_tool"
+    },
+    {
+      "level": 1,
+      "name": "tconstruct:momentum"
+    }
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 2,
+        "name": "etstlib:aerial_reinforced"
+      },
+      {
+        "level": 1,
+        "name": "tinkers_advanced:aerial_protection"
+      }
+    ]
+  }
+}

@@ -28,7 +28,7 @@ public class IceyFlyingSword extends BasicFlyingSwordEntity {
     @Override
     public void doAfterHitEffect(@NotNull Entity target, float damageDealt) {
         var instance = EntityTickerManager.getInstance(target);
-        if (!instance.hasTicker(TltTechEntityTickers.CHILLING_CD.get())) instance.addTicker(new EntityTickerInstance(TltTechEntityTickers.CHILLING.get(),1,100),Integer::max,Integer::max);
+        if (!instance.hasTicker(TltTechEntityTickers.CHILLING_CD.get())) instance.addTicker(new EntityTickerInstance(TltTechEntityTickers.CHILLING.get(),1,150),Integer::max,Integer::max);
     }
 
 //    @Override

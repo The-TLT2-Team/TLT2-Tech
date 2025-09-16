@@ -129,4 +129,5 @@ public class TltTechItems {
     public static final RegistryObject<Item> LIFE_SWORD = PROJECTILE_ITEMS.register("life_sword",()->new Item(new Item.Properties()));
     public static final RegistryObject<Item> LIGHTNING_SWORD = PROJECTILE_ITEMS.register("lightning_sword",()->new Item(new Item.Properties()));
     public static final RegistryObject<Item> OCEANIC_SWORD = PROJECTILE_ITEMS.register("oceanic_sword",()->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ELEMENTAL_SLASH = PROJECTILE_ITEMS.register("elemental_slash",()->new Item(new Item.Properties()));
 }

@@ -4,6 +4,8 @@ import com.c2h6s.etstlib.entity.specialDamageSources.LegacyDamageSource;
 import com.c2h6s.etstlib.register.EtSTLibHooks;
 import com.c2h6s.etstlib.util.EntityInRangeUtil;
 import com.c2h6s.etstlib.util.ProjectileUtil;
+import com.fg.tlt_tech.util.TltTechCommonUtils;
+import com.fg.tltmod.util.mixin.ILivingEntityMixin;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -24,8 +26,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
@@ -60,6 +60,7 @@ public class BasicFlyingSwordEntity extends Projectile {
     public List<Vec3> positionCache = new ArrayList<>();
     public List<Vec3> rotationCache = new ArrayList<>();
     public int lifeTime = 300;
+    public boolean isTrueHurt = false;
 
     @Override
     protected void defineSynchedData() {
@@ -201,7 +202,7 @@ public class BasicFlyingSwordEntity extends Projectile {
             source=entry.getHook(EtSTLibHooks.MODIFY_DAMAGE_SOURCE).modifyDamageSource(tool,entry,attackerLiving,hand,targetEntity,sourceSlot,true,true,isCritical,source);
         }
 
-        boolean didHit = dealModifiedDamage(tool, context, damage,source);
+        boolean didHit = isTrueHurt&&targetLiving!=null? TltTechCommonUtils.trueHurt(targetLiving,source,damage): dealModifiedDamage(tool, context, damage,source);
 
         this.doAfterHitEffect(targetEntity,damage);
 

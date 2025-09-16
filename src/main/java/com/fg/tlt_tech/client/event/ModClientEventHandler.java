@@ -2,6 +2,7 @@ package com.fg.tlt_tech.client.event;
 
 import com.fg.tlt_tech.TltTech;
 import com.fg.tlt_tech.client.entityRenderers.DirectionalRotatingFlyingSwordRenderer;
+import com.fg.tlt_tech.client.entityRenderers.ElementalSlashRenderer;
 import com.fg.tlt_tech.client.entityRenderers.IonicExplosionRenderer;
 import com.fg.tlt_tech.init.TltTechEntityTypes;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,5 +18,6 @@ public class ModClientEventHandler {
             event.registerEntityRenderer(object.get(), DirectionalRotatingFlyingSwordRenderer::new);
         });
         event.registerEntityRenderer(TltTechEntityTypes.IONIC_EXPLOSION.getEntityType(), IonicExplosionRenderer::new);
+        event.registerEntityRenderer(TltTechEntityTypes.ELEMENTAL_SLASH.getEntityType(), ElementalSlashRenderer::new);
     }
 }

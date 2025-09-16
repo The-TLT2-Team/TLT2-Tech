@@ -1,5 +1,6 @@
 package com.fg.tlt_tech.data;
 
+import com.fg.tlt_tech.data.providers.tinker.*;
 import com.fg.tlt_tech.TltTech;
 import com.fg.tlt_tech.data.providers.*;
 import net.minecraft.core.HolderLookup;
@@ -10,7 +11,6 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import slimeknights.tconstruct.fluids.data.FluidBucketModelProvider;
-
 import java.util.concurrent.CompletableFuture;
 
 @Mod.EventBusSubscriber(modid = TltTech.MODID,bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -30,5 +30,13 @@ public class TltTechDataProviders {
         TltTechBlockTagProvider blockTags = new TltTechBlockTagProvider(output, lookupProvider, helper);
         generator.addProvider(event.includeClient(),blockTags);
         generator.addProvider(event.includeServer(),new TltTechItemTagProvider(output,lookupProvider,blockTags.contentsGetter(),helper));
+        generator.addProvider(event.includeClient(),new TiAcMaterialProvider(output));
+        generator.addProvider(event.includeClient(),new TiAcMaterialStatProvider(output));
+        generator.addProvider(event.includeClient(),new TiAcMaterialModifierProvider(output));
+        generator.addProvider(event.includeClient(),new TiAcFluidEffectProvider(output));
+        generator.addProvider(event.includeClient(),new TiAcMaterialTagProvider(output,helper));
+        generator.addProvider(event.includeClient(),new TiAcModifierTagProvider(output,helper));
+        generator.addProvider(event.includeClient(),new TiAcMaterialRenderInfoProvider(output,new TiAcMaterialSpriteProvider(),helper));
+        generator.addProvider(event.includeServer(),new TiAcModifierProvider(output));
     }
 }

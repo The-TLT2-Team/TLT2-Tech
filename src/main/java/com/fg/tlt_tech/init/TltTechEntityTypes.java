@@ -79,4 +79,11 @@ public class TltTechEntityTypes {
                     .setTrackingRange(8)
                     .setShouldReceiveVelocityUpdates(true)
                     .setUpdateInterval(4));
+    public static final EntityTypeRegistryObject<ElementalSlashEntity> ELEMENTAL_SLASH = ENTITY_TYPES.register("elemental_slash",
+            EntityType.Builder.<ElementalSlashEntity>of(ElementalSlashEntity::new, MobCategory.MISC)
+                    .sized(2f,0.25f)
+                    .setCustomClientFactory(((spawnEntity, level) -> new ElementalSlashEntity(level)))
+                    .setTrackingRange(8)
+                    .setShouldReceiveVelocityUpdates(true)
+                    .setUpdateInterval(4));
 }

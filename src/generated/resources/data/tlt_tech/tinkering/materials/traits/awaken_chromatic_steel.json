@@ -1,0 +1,36 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "tlt_tech:hyper_energy_shielding"
+      },
+      {
+        "level": 1,
+        "name": "tlt_tech:flying"
+      },
+      {
+        "level": 3,
+        "name": "tlt_tech:industrial_born"
+      }
+    ],
+    "tconstruct:melee_harvest": [
+      {
+        "level": 1,
+        "name": "tlt_tech:elemental_sword"
+      },
+      {
+        "level": 2,
+        "name": "tlt_tech:hyper_flux_loaded"
+      },
+      {
+        "level": 3,
+        "name": "tlt_tech:industrial_born"
+      },
+      {
+        "level": 1,
+        "name": "tlt_tech:automatic_tool"
+      }
+    ]
+  }
+}

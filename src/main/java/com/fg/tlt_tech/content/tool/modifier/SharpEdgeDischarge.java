@@ -24,15 +24,30 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.client.TooltipKey;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
+import slimeknights.tconstruct.library.modifiers.ModifierHooks;
+import slimeknights.tconstruct.library.modifiers.hook.build.VolatileDataModifierHook;
+import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.capability.TinkerDataKeys;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
+import slimeknights.tconstruct.library.tools.item.IModifiable;
+import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
+import slimeknights.tconstruct.library.tools.nbt.ToolDataNBT;
+import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 
 import java.util.List;
 
-public class SharpEdgeDischarge extends FluxInfused {
+public class SharpEdgeDischarge extends FluxInfused implements VolatileDataModifierHook {
+
+    @Override
+    protected void registerHooks(ModuleHookMap.@NotNull Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
+        hookBuilder.addHook(this, ModifierHooks.VOLATILE_DATA);
+    }
 
     @Override
     public void addTooltip(IToolStackView iToolStackView, ModifierEntry modifierEntry, @Nullable Player player, List<Component> tooltip, TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
@@ -43,7 +58,7 @@ public class SharpEdgeDischarge extends FluxInfused {
         if (context.isFullyCharged()&&context.getTarget() instanceof LivingEntity living&&getMode(tool)>=1&& ToolEnergyUtil.extractEnergy(tool,500,true)>=500){
             ToolEnergyUtil.extractEnergy(tool,500,false);
             int amount = RANDOM.nextInt(modifier.getLevel()+1)+1;
-            List<Entity> list = living.level().getEntitiesOfClass(Entity.class,new AABB(living.blockPosition().above()).inflate(4+modifier.getLevel()));
+            List<Entity> list = living.level().getEntitiesOfClass(Entity.class,new AABB(living.blockPosition().above()).inflate(5+modifier.getLevel()));
             list.remove(living);
             list.remove(context.getAttacker());
             if (list.isEmpty()) return;
@@ -65,8 +80,8 @@ public class SharpEdgeDischarge extends FluxInfused {
     public void modifierOnInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (world instanceof ServerLevel serverLevel&&world.getGameTime()%Math.max(20/(modifier.getLevel()+1),4)==0&&getMode(tool)==2&&isSelected){
             List<LivingEntity> list = serverLevel.getEntitiesOfClass(LivingEntity.class,new AABB(
-                    holder.getX()-6,holder.getY()-6,holder.getZ()-6,holder.getX()+6,holder.getY()+6,holder.getZ()+6
-            ),entity->entity!=holder&&!(entity instanceof Player)&&entity.isAlive()&&entity.distanceTo(holder)<5);
+                    holder.getX()-7,holder.getY()-7,holder.getZ()-7,holder.getX()+7,holder.getY()+7,holder.getZ()+7
+            ),entity->entity!=holder&&!(entity instanceof Player)&&entity.isAlive()&&entity.distanceTo(holder)<6.5);
             int count = modifier.getLevel();
             while (!list.isEmpty()&&count>0&&ToolEnergyUtil.extractEnergy(tool,250,true)>=250){
                 LivingEntity living = list.get(RANDOM.nextInt(list.size()));
@@ -84,5 +99,13 @@ public class SharpEdgeDischarge extends FluxInfused {
     @Override
     public void onModeSwitch(IToolStackView tool, ServerPlayer player, ModifierEntry entry) {
         OverlayMessagePacket.sendToClient(Component.translatable("msg.tinkers_advanced.flux_mode.thermal_slash." + getMode(tool)), player);
+        ((ToolStack)tool).rebuildStats();
+    }
+
+    @Override
+    public void addVolatileData(IToolContext context, ModifierEntry modifier, ToolDataNBT volatileData) {
+        if (context.getPersistentData().getInt(MODE_LOCATION) % 3==2){
+            volatileData.putBoolean(IModifiable.SHINY,true);
+        }
     }
 }

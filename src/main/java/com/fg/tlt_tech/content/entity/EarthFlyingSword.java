@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 public class EarthFlyingSword extends BasicFlyingSwordEntity {
     public EarthFlyingSword(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel, TltTechItems.EARTH_SWORD.get());
+        this.isTrueHurt = true;
     }
     public EarthFlyingSword(Level pLevel) {
         this(TltTechEntityTypes.EARTH_SWORD.get(), pLevel);

@@ -3,7 +3,7 @@
   "package": "com.fg.tlt_tech.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
-  "refmap": "tltmod.refmap.json",
+  "refmap": "tlt_tech.refmap.json",
   "mixins": [
     "immersive.ArcFurnaceRecipeMixin",
     "immersive.IMultiblockRecipeAccessor",

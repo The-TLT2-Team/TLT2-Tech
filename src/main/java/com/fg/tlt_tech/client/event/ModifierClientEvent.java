@@ -49,8 +49,8 @@ public class ModifierClientEvent {
                 PoseStack.Pose pose = poseStack.last();
                 Matrix4f poseMatrix = pose.pose();
                 Matrix3f normalMatrix = pose.normal();
-                RenderUtil.renderRing(5,5.1f,32,0xFFFFFF,1,0xFF0000,0.75f,consumer,poseStack,poseMatrix,normalMatrix);
-                RenderUtil.renderRing(5.1f,5.5f,32,0xFF0000,0.75f,0xFF0000,0f,consumer,poseStack,poseMatrix,normalMatrix);
+                RenderUtil.renderRing(6,6.1f,32,0xFFFFFF,1,0xFF0000,0.75f,consumer,poseStack,poseMatrix,normalMatrix);
+                RenderUtil.renderRing(6.1f,6.5f,32,0xFF0000,0.75f,0xFF0000,0f,consumer,poseStack,poseMatrix,normalMatrix);
                 poseStack.popPose();
             }
         }
