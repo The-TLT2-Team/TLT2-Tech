@@ -32,12 +32,12 @@ public class HyperEnergyShielding extends BasicFEModifier implements DamageBlock
 
     @Override
     public int getCapacity(ModifierEntry modifierEntry) {
-        return 1000000*modifierEntry.getLevel();
+        return 100000000*modifierEntry.getLevel();
     }
     @Override
     public int modifierDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
-        if (ToolEnergyUtil.extractEnergy(tool, 250 * amount, true) >= 250) {
-            int reduce = ToolEnergyUtil.extractEnergy(tool, 250 * amount, false) / 250;
+        if (ToolEnergyUtil.extractEnergy(tool, 200 * amount, true) >= 200) {
+            int reduce = ToolEnergyUtil.extractEnergy(tool, 200 * amount, false) / 200;
             return reduce >= amount ? 0 : amount - reduce;
         } else {
             return amount;
@@ -54,7 +54,7 @@ public class HyperEnergyShielding extends BasicFEModifier implements DamageBlock
                 damageSource.is(DamageTypeTags.WITCH_RESISTANT_TO)) {
             return true;
         } else if (!damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY)){
-            int needed = (int)(amount * 500.0F);
+            int needed = (int)(amount * 250.0F);
             int maxCancle = ToolEnergyUtil.extractEnergy(tool, needed, true);
             if (maxCancle >= needed) {
                 ToolEnergyUtil.extractEnergy(tool, needed, false);
@@ -67,7 +67,7 @@ public class HyperEnergyShielding extends BasicFEModifier implements DamageBlock
     }
     @Override
     public float modifyDamageTaken(IToolStackView tool, ModifierEntry modifier, EquipmentContext context, EquipmentSlot slotType, DamageSource source, float amount, boolean isDirectDamage) {
-        amount -= (float)ToolEnergyUtil.extractEnergy(tool, (int)(amount * 1000.0F), false) / 1000.0F;
+        amount -= (float)ToolEnergyUtil.extractEnergy(tool, (int)(amount * 300), false) / 300;
         return amount;
     }
 

@@ -7,12 +7,13 @@ import com.c2h6s.etstlib.content.misc.entityTicker.EntityTickerManager;
 import com.fg.tlt_tech.init.TltTechEntityTickers;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 
 public class ChillingTicker extends EntityTicker {
     @Override
     public boolean tick(int duration, int level, Entity entity) {
         if (entity.level() instanceof ServerLevel serverLevel) serverLevel.sendParticles(CoreParticles.FROST.get(), entity.getX(),entity.getY()+0.5*entity.getBbHeight(),entity.getZ(),4,entity.getBbWidth()*0.75,entity.getBbHeight()*0.75,entity.getBbWidth()*0.75,0.05);
-        return false;
+        return entity instanceof LivingEntity living&&living.isDeadOrDying();
     }
 
     @Override

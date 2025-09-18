@@ -19,7 +19,7 @@ public enum EnumMaterialModifier {
     RESTRUCTURE_CHROMATIC_STEEL_MELEE(MaterialRegistry.MELEE_HARVEST,entry(TltTechModifiers.HYPER_FLUX_LOADED.getId()),entry(TltTechModifiers.ELEMENTAL_SLASH.getId()),entry(TltTechModifiers.INDUSTRIAL_BORN.getId(),2),entry(TltTechModifiers.AUTOMATIC_TOOL.getId())),
     RESTRUCTURE_CHROMATIC_STEEL_ARMOR(MaterialRegistry.ARMOR,entry(TltTechModifiers.ENERGY_SHIELDING.getId()),entry(TltTechModifiers.INDUSTRIAL_BORN.getId(),2)),
 
-    AWAKENED_CHROMATIC_STEEL_MELEE(MaterialRegistry.MELEE_HARVEST,entry(TltTechModifiers.ELEMENTAL_SWORD.getId()),entry(TltTechModifiers.HYPER_FLUX_LOADED.getId(),2),entry(TltTechModifiers.INDUSTRIAL_BORN.getId(),3),entry(TltTechModifiers.AUTOMATIC_TOOL.getId())),
+    AWAKENED_CHROMATIC_STEEL_MELEE(MaterialRegistry.MELEE_HARVEST,entry(TltTechModifiers.ELEMENTAL_SWORD.getId()),entry(TltTechModifiers.SUPREME_FLUX_LOADED.getId()),entry(TltTechModifiers.INDUSTRIAL_BORN.getId(),3),entry(TltTechModifiers.AUTOMATIC_TOOL.getId())),
     AWAKENED_CHROMATIC_STEEL_ARMOR(MaterialRegistry.ARMOR,entry(TltTechModifiers.HYPPER_ENERGY_SHIELDING.getId()),entry(TltTechModifiers.FLYING.getId()),entry(TltTechModifiers.INDUSTRIAL_BORN.getId(),3)),
     ;
 

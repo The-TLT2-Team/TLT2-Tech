@@ -20,5 +20,7 @@ public class TltTechModifiers {
     public static final StaticModifier<HyperFluxLoaded> HYPER_FLUX_LOADED = MODIFIERS.register("hyper_flux_loaded",HyperFluxLoaded::new);
     public static final StaticModifier<HyperEnergyShielding> HYPPER_ENERGY_SHIELDING = MODIFIERS.register("hyper_energy_shielding", HyperEnergyShielding::new);
     public static final StaticModifier<EnergyShielding> ENERGY_SHIELDING = MODIFIERS.register("energy_shielding", EnergyShielding::new);
+    public static final StaticModifier<SupremeFluxLoaded> SUPREME_FLUX_LOADED = MODIFIERS.register("supreme_flux_loaded", SupremeFluxLoaded::new);
+    public static final StaticModifier<BypassEffect> REVERSE_POLARITY = MODIFIERS.register("reverse_polarity", BypassEffect::new);
 
 }

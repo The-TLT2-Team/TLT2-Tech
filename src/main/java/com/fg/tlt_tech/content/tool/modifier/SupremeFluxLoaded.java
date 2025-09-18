@@ -7,14 +7,12 @@ import slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-import java.util.List;
-
-public class HyperFluxLoaded extends BasicFEModifier {
+public class SupremeFluxLoaded extends BasicFEModifier {
     @Override
     public float onGetMeleeDamage(IToolStackView tool, ModifierEntry modifier, ToolAttackContext context, float baseDamage, float damage) {
-        if (ToolEnergyCapability.getEnergy(tool)>250){
-            float bonus = Math.min(ToolEnergyCapability.getEnergy(tool)/250f,baseDamage*0.75f*modifier.getLevel());
-            bonus = Math.min(bonus, ToolEnergyUtil.extractEnergy(tool,(int) bonus*250,false)/250f);
+        if (ToolEnergyCapability.getEnergy(tool)>5){
+            float bonus = Math.min(ToolEnergyCapability.getEnergy(tool)/5f,damage*2*modifier.getLevel());
+            bonus = Math.min(bonus, ToolEnergyUtil.extractEnergy(tool,(int) bonus*5,false)/5f);
             damage+=bonus;
         }
         return damage;
@@ -22,6 +20,6 @@ public class HyperFluxLoaded extends BasicFEModifier {
 
     @Override
     public int getCapacity(ModifierEntry modifierEntry) {
-        return 1000000*modifierEntry.getLevel();
+        return 10000000*modifierEntry.getLevel();
     }
 }

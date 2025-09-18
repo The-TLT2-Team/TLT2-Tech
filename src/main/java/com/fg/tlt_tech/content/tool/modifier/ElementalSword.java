@@ -22,6 +22,7 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
+import slimeknights.tconstruct.library.utils.RomanNumeralHelper;
 
 public class ElementalSword extends EtSTBaseModifier implements LeftClickModifierHook {
     @Override
@@ -73,7 +74,7 @@ public class ElementalSword extends EtSTBaseModifier implements LeftClickModifie
     }
 
     @Override
-    public Component getDisplayName() {
-        return DynamicComponentUtil.ScrollColorfulText.getColorfulText(super.getDisplayName().getString(),null,new int[]{0xFFCCCC,0xFFFFCC,0xCCFFCC,0xCCFFFF,0xCCCCFF,0xFFCCFF},10,20,true);
+    public Component getDisplayName(int level) {
+        return DynamicComponentUtil.ScrollColorfulText.getColorfulText(getTranslationKey(), RomanNumeralHelper.getNumeral(level).getString(),new int[]{0xFFCCCC,0xFFFFCC,0xCCFFCC,0xCCFFFF,0xCCCCFF,0xFFCCFF},10,20,true);
     }
 }

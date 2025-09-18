@@ -40,22 +40,22 @@ public class PneumaticTool extends EtSTBaseModifier implements AttributesModifie
     public void modifierOnInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (holder instanceof Player player&&isSelected){
             DistExecutor.unsafeRunForDist(()->()->{
-                if (player.getAttackStrengthScale(player.getCurrentItemAttackStrengthDelay()<2?1:0)>=1&& ClientUtils.isLeftClickDown()&&getAir(tool)>100){
+                if (player.getAttackStrengthScale(player.getCurrentItemAttackStrengthDelay()<2?1:0)>=1&& ClientUtils.isLeftClickDown()&&getAir(tool)>50){
                     addAir(tool,-50);
                     ClientUtils.syncToolDataToServer(tool,EquipmentSlot.MAINHAND);
                     ClientUtils.doLeftClickAttack();
                 }
                 return null;
-            },()->()-> {
-                if (holder.isUsingItem()&&holder.getUseItem()==stack&&getAir(tool)>100){
-                    int drawtime = ModifierUtil.getPersistentInt(stack, GeneralInteractionModifierHook.KEY_DRAWTIME, -1);
-                    if ((stack.getUseDuration() + (stack.getUseDuration()<2?1:0) - holder.getUseItemRemainingTicks()) / (float)drawtime>=1){
-                        addAir(tool,-50);
-                        holder.releaseUsingItem();
-                    }
-                }
-                return null;
-            });
+            },()->()-> null);
+        }
+        if (!world.isClientSide && holder.isUsingItem() && holder.getUseItem() == stack) {
+            int drawtime = ModifierUtil.getPersistentInt(stack, GeneralInteractionModifierHook.KEY_DRAWTIME, -1);
+            int duration = stack.getUseDuration();
+            if (duration<2) duration+=1;
+            if ((float)(duration - holder.getUseItemRemainingTicks()) / (float)drawtime >= 1.0F) {
+                holder.releaseUsingItem();
+                addAir(tool,-50);
+            }
         }
     }
 

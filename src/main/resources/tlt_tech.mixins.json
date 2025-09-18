@@ -21,7 +21,8 @@
     "thermal.MachineBlockEntityMixin",
     "thermal.MachinePropertiesMixin",
     "thermal.Reconfigurable4WayBlockEntityMixin",
-    "thermal.ThermalAugmentRulesMixin"
+    "thermal.ThermalAugmentRulesMixin",
+    "tinkers.tiac.SculkResonanceMixin"
   ],
   "injectors": {
     "defaultRequire": 1
