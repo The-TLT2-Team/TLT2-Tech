@@ -40,7 +40,7 @@ public class PneumaticTool extends EtSTBaseModifier implements AttributesModifie
     public void modifierOnInventoryTick(IToolStackView tool, ModifierEntry modifier, Level world, LivingEntity holder, int itemSlot, boolean isSelected, boolean isCorrectSlot, ItemStack stack) {
         if (holder instanceof Player player&&isSelected){
             DistExecutor.unsafeRunForDist(()->()->{
-                if (player.getAttackStrengthScale(player.getCurrentItemAttackStrengthDelay()<2?1:0)>=1&& ClientUtils.isLeftClickDown()&&getAir(tool)>50){
+                if (player.getAttackStrengthScale(0)>=1&& ClientUtils.isLeftClickDown()&&getAir(tool)>50){
                     addAir(tool,-50);
                     ClientUtils.syncToolDataToServer(tool,EquipmentSlot.MAINHAND);
                     ClientUtils.doLeftClickAttack();

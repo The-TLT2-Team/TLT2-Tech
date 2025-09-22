@@ -49,7 +49,7 @@ public abstract class MachineBlockEntityMixin extends BlockEntityCoFH {
 
  */
 
-    @Inject(method = "tickServer",at = @At(value = "INVOKE", target = "Lcofh/thermal/lib/common/block/entity/MachineBlockEntity;processFinish()V"))
+    @Inject(method = "tickServer",at = @At(value = "INVOKE", target = "Lcofh/thermal/lib/common/block/entity/MachineBlockEntity;transferOutput()V",ordinal = 0))
     public void addParallelLogic(CallbackInfo ci){
         int parallel = (int) IMachinePropertiesMixin.getMaxParallel(getMachineProperties());
         if (parallel>0) {

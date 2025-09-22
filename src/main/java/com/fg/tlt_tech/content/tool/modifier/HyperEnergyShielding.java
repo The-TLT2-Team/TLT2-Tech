@@ -80,7 +80,6 @@ public class HyperEnergyShielding extends BasicFEModifier implements DamageBlock
             holder.addEffect(new MobEffectInstance(CoreMobEffects.MAGIC_RESISTANCE.get(), 100, 5, false, false));
             holder.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 100, 5, false, false));
             holder.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 5, false, false));
-            holder.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 100, 9, false, false));
             holder.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 3, false, false));
             holder.addEffect(new MobEffectInstance(MobEffects.LUCK, 100, 5, false, false));
             if (!world.isClientSide) {

@@ -44,7 +44,8 @@ public class LightningSwordEntity extends BasicFlyingSwordEntity {
     public void spawnParticle(ServerLevel serverLevel) {
         Vec3 offSet = this.getDeltaMovement().cross(new Vec3(random.nextDouble()-0.5,random.nextDouble()-0.5,random.nextDouble()-0.5));
         if (offSet.length()<=0) offSet = new Vec3(1,1,1);
-        offSet.normalize().scale(random.nextDouble()*this.getDeltaMovement().length()*0.2+0.1).add(this.getDeltaMovement());
+        offSet.normalize();
+        offSet = offSet.scale(random.nextDouble()*this.getDeltaMovement().length()*0.2+0.1).add(this.getDeltaMovement());
         serverLevel.sendParticles(new BiColorParticleOptions(CoreParticles.STRAIGHT_ARC.get(),0.2f,4,0,-1, -240988),this.getX()-offSet.x,this.getY()-offSet.y,this.getZ()-offSet.z,0,this.getX()+offSet.x,this.getY()+offSet.y,this.getZ()+offSet.z,1);
     }
 }

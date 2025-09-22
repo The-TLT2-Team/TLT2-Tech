@@ -16,7 +16,7 @@ public class AutomaticTool extends AutoShot {
         super.modifierOnInventoryTick(tool,modifier,world,holder,itemSlot,isSelected,isCorrectSlot,stack);
         if (holder instanceof Player player&&isSelected){
             DistExecutor.unsafeRunForDist(()->()->{
-                if (player.getAttackStrengthScale(player.getCurrentItemAttackStrengthDelay()<2?1:0)>=1){
+                if (player.getAttackStrengthScale(0)>=1){
                     ClientUtils.doLeftClickAttack();
                 }
                 return null;
