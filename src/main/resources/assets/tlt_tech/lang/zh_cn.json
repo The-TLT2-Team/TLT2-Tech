@@ -30,6 +30,7 @@
   "item.tlt_tech.dynamo_upgrade_inf": "神匠燃烧组件",
 
   "item.tlt_tech.advanced_safety_upgrade": "超级安全升级",
+  "item.tlt_tech.infinity_provider": "无限供应器",
 
 
 
@@ -40,5 +41,12 @@
 
 
 
-  "info.thermal.augment.attr.MachineParallel": "最大并行数"
+  "info.thermal.augment.attr.MachineParallel": "最大并行数",
+
+  "info.tlt_tech.inf_provider.info": "相当于一个能无限提供某个东西的容器，",
+  "info.tlt_tech.inf_provider.info2": "可被放入焦褐工匠储罐（提取流体）或粒子交换器（提取全部类型）中。",
+  "info.tlt_tech.inf_provider": "无限供应：",
+  "info.tlt_tech.inf_provider.item": "物品",
+  "info.tlt_tech.inf_provider.fluid": "流体",
+  "info.tlt_tech.inf_provider.chemical": "化学品"
 }

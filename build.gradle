@@ -134,10 +134,7 @@ repositories {
         url 'https://dvs1.progwml6.com/files/maven'
     }
     maven {
-        url = "https://maven.blamejared.com"
-        content {
-            includeGroup "mezz.jei"
-        }
+        url "https://maven.blamejared.com"
     }
     maven { url 'https://modmaven.dev/' }
     maven {
@@ -147,6 +144,10 @@ repositories {
         }
     }
     maven { url 'https://maven.covers1624.net/' }
+    maven {
+        name = "C4"
+        url = "https://maven.theillusivec4.top/"
+    }
     flatDir {
         dir 'libs'
     }
@@ -168,6 +169,9 @@ dependencies {
     implementation fg.deobf("me.desht.pneumaticcraft:pneumaticcraft-repressurized:6.0.9+mc1.20.1")
     implementation fg.deobf("curse.maven:tinkers-advanced-1213078:6947305")
     implementation fg.deobf("curse.maven:etst-lib-1206379:6732443")
+    implementation fg.deobf("vazkii.botania:Botania:1.20.1-450-FORGE")
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:5.4.2+1.20.1")
+    implementation fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-84-FORGE")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

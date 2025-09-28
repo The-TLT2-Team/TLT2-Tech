@@ -75,6 +75,6 @@ public class ElementalSword extends EtSTBaseModifier implements LeftClickModifie
 
     @Override
     public Component getDisplayName(int level) {
-        return DynamicComponentUtil.ScrollColorfulText.getColorfulText(getTranslationKey()," "+RomanNumeralHelper.getNumeral(level).getString(),new int[]{0xFFCCCC,0xFFFFCC,0xCCFFCC,0xCCFFFF,0xCCCCFF,0xFFCCFF},10,100,true);
+        return DynamicComponentUtil.ScrollColorfulText.getColorfulText(getTranslationKey()," "+RomanNumeralHelper.getNumeral(level).getString(),new int[]{0xFFCCCC,0xFFFFCC,0xCCFFCC,0xCCFFFF,0xCCCCFF,0xFFCCFF},40,10,true);
     }
 }

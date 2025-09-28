@@ -42,8 +42,8 @@ public class TltTech
             flagUniqueAugment(TltTechItems.UPGRADE_AUGMENT_5.get());
             flagUniqueAugment(TltTechItems.UPGRADE_AUGMENT_6.get());
             AUG_SCALE_MAX = Integer.MAX_VALUE;
-            ThermalCoreConfig.machineAugments = 8;
-            ThermalCoreConfig.dynamoAugments = 6;
+            ThermalCoreConfig.machineAugments = 9;
+            ThermalCoreConfig.dynamoAugments = 9;
             TltTechPacketHandler.init();
         });
     }

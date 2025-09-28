@@ -17,7 +17,7 @@ public class TltTechTabs {
             .icon(() -> TltTechItems.REACTIVE_NUCLEAR_WASTE.get().getDefaultInstance())
             .displayItems((parameters, output) ->{
                 TltTechItems.ITEMS.getEntries().forEach(object-> {
-                    if (object.isPresent()) output.accept(object.get());
+                    if (object.isPresent()) output.accept(object.get().getDefaultInstance());
                 });
                 TltTechBlocks.MEK_BLOCKS.getAllBlocks().forEach(iBlockProvider -> {
                     try {

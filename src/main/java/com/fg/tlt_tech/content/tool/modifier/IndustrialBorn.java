@@ -3,6 +3,7 @@ package com.fg.tlt_tech.content.tool.modifier;
 import com.c2h6s.etstlib.tool.modifiers.base.EtSTBaseModifier;
 import com.c2h6s.tinkers_advanced.TinkersAdvanced;
 import com.fg.tlt_tech.TltTech;
+import com.fg.tlt_tech.util.Constants;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -47,6 +48,7 @@ public class IndustrialBorn extends EtSTBaseModifier implements VolatileDataModi
     @Override
     public void addVolatileData(IToolContext context, ModifierEntry modifier, ToolDataNBT volatileData) {
         List.of(SlotType.DEFENSE,SlotType.UPGRADE,SlotType.ABILITY).forEach(slotType -> volatileData.addSlots(slotType,modifier.getLevel()));
+        volatileData.putBoolean(Constants.NbtLocations.KEY_ANTI_RAGNAROK,true);
     }
 
     @Override

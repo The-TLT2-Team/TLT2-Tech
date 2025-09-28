@@ -1,6 +1,9 @@
 package com.fg.tlt_tech.init;
 
 import com.fg.tlt_tech.content.tool.modifier.*;
+import com.fg.tlt_tech.content.tool.modifier.botania.MagicalOres;
+import com.fg.tlt_tech.content.tool.modifier.botania.OreCapture;
+import com.fg.tlt_tech.content.tool.modifier.botania.OreResonance;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
 
@@ -22,5 +25,8 @@ public class TltTechModifiers {
     public static final StaticModifier<EnergyShielding> ENERGY_SHIELDING = MODIFIERS.register("energy_shielding", EnergyShielding::new);
     public static final StaticModifier<SupremeFluxLoaded> SUPREME_FLUX_LOADED = MODIFIERS.register("supreme_flux_loaded", SupremeFluxLoaded::new);
     public static final StaticModifier<BypassEffect> REVERSE_POLARITY = MODIFIERS.register("reverse_polarity", BypassEffect::new);
+    public static final StaticModifier<MagicalOres> MAGICAL_ORES = MODIFIERS.register("magical_ores", MagicalOres::new);
+    public static final StaticModifier<OreCapture> ORE_CAPTURE = MODIFIERS.register("ore_capture", OreCapture::new);
+    public static final StaticModifier<OreResonance> ORE_RESONANCE = MODIFIERS.register("ore_resonance", OreResonance::new);
 
 }

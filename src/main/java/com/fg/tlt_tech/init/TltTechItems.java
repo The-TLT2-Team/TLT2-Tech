@@ -3,11 +3,10 @@ package com.fg.tlt_tech.init;
 import cofh.core.util.helpers.AugmentDataHelper;
 import cofh.thermal.lib.common.item.AugmentItem;
 import com.fg.tlt_tech.TltTech;
+import com.fg.tlt_tech.content.tool.item.InfinityItem;
 import me.desht.pneumaticcraft.api.upgrade.PNCUpgrade;
 import me.desht.pneumaticcraft.common.item.UpgradeItem;
 import me.desht.pneumaticcraft.common.upgrades.ApplicableUpgradesDB;
-import me.desht.pneumaticcraft.common.upgrades.PNCUpgradeImpl;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -61,14 +60,14 @@ public class TltTechItems {
             .mod(TAG_AUGMENT_DYNAMO_POWER,4f).build()));
     public static final RegistryObject<Item> DYNAMO_UPGRADE_1 = registerSimpleModel("dynamo_upgrade_1",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_DYNAMO)
-            .mod(TAG_AUGMENT_DYNAMO_ENERGY,16)
-            .mod(TAG_AUGMENT_DYNAMO_POWER,8)
+            .mod(TAG_AUGMENT_DYNAMO_ENERGY,20)
+            .mod(TAG_AUGMENT_DYNAMO_POWER,2)
             .mod(TAG_AUGMENT_DYNAMO_THROTTLE,1)
             .build()));
     public static final RegistryObject<Item> DYNAMO_UPGRADE_2 = registerSimpleModel("dynamo_upgrade_2",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_DYNAMO)
-            .mod(TAG_AUGMENT_DYNAMO_ENERGY,32)
-            .mod(TAG_AUGMENT_DYNAMO_POWER,16)
+            .mod(TAG_AUGMENT_DYNAMO_ENERGY,40)
+            .mod(TAG_AUGMENT_DYNAMO_POWER,4)
             .mod(TAG_AUGMENT_DYNAMO_THROTTLE,1).build()));
     public static final RegistryObject<Item> MACHINE_CATALYST_UPGRADE_1 = registerSimpleModel("machine_catalyst_upgrade_1",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_MACHINE)
@@ -118,6 +117,9 @@ public class TltTechItems {
             .mod(TAG_AUGMENT_DYNAMO_THROTTLE,1)
             .build()));
     public static final RegistryObject<Item> ADVANCED_SAFETY_UPGRADE = ITEMS.register("advanced_safety_upgrade",()->new UpgradeItem(PnCUpgrades.ADVANCED_SAFETY_UPGRADE,1));
+
+    public static final RegistryObject<Item> INF_PROVIDER = registerSimpleModel("infinity_provider", InfinityItem::new);
+
 
     public static class PnCUpgrades{
         public static final PNCUpgrade ADVANCED_SAFETY_UPGRADE = ApplicableUpgradesDB.getInstance().registerUpgrade(TltTech.getResource("advanced_safety_upgrade"),1,TltTech.MODID);
