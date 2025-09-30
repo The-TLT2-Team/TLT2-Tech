@@ -31,6 +31,7 @@ import static com.fg.tlt_tech.content.tool.modifier.botania.MagicalOres.*;
 public class OreResonance extends EtSTBaseModifier implements AttributesModifierHook, ModifyDamageModifierHook {
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.ATTRIBUTES,ModifierHooks.MODIFY_HURT);
     }
     @Override
