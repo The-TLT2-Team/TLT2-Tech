@@ -28,5 +28,9 @@ public class TltTechModifiers {
     public static final StaticModifier<MagicalOres> MAGICAL_ORES = MODIFIERS.register("magical_ores", MagicalOres::new);
     public static final StaticModifier<OreCapture> ORE_CAPTURE = MODIFIERS.register("ore_capture", OreCapture::new);
     public static final StaticModifier<OreResonance> ORE_RESONANCE = MODIFIERS.register("ore_resonance", OreResonance::new);
+    public static final StaticModifier<FluxBlocking> FLUX_BLOCKING = MODIFIERS.register("flux_blocking", FluxBlocking::new);
+    public static final StaticModifier<FluxSlashModifier> FLUX_SLASH = MODIFIERS.register("flux_slash", FluxSlashModifier::new);
+    public static final StaticModifier<FluxInfinity> FLUX_INFINITY = MODIFIERS.register("flux_infinity", FluxInfinity::new);
+    public static final StaticModifier<AlfBless> ALF_BLESS = MODIFIERS.register("alf_bless", AlfBless::new);
 
 }

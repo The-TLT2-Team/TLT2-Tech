@@ -1,6 +1,7 @@
 package com.fg.tlt_tech;
 
 import cofh.thermal.core.common.config.ThermalCoreConfig;
+import com.fg.tlt_tech.content.tool.cap.TinkerFluxShieldedItemCapProvider;
 import com.fg.tlt_tech.init.*;
 import com.fg.tlt_tech.network.TltTechPacketHandler;
 import net.minecraft.resources.ResourceLocation;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import slimeknights.tconstruct.library.tools.capability.TinkerDataCapability;
+import slimeknights.tconstruct.library.tools.capability.ToolCapabilityProvider;
 
 import static cofh.lib.util.Constants.AUG_SCALE_MAX;
 import static cofh.thermal.lib.util.ThermalAugmentRules.flagUniqueAugment;
@@ -37,6 +39,7 @@ public class TltTech
 
     @SubscribeEvent
     public static void commonSetup(FMLCommonSetupEvent event){
+        ToolCapabilityProvider.register((itemStack, supplier) -> new TinkerFluxShieldedItemCapProvider(supplier));
         event.enqueueWork(()->{
             flagUniqueAugment(TltTechItems.UPGRADE_AUGMENT_4.get());
             flagUniqueAugment(TltTechItems.UPGRADE_AUGMENT_5.get());
