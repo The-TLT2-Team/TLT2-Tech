@@ -61,14 +61,14 @@ public class TltTechItems {
             .mod(TAG_AUGMENT_DYNAMO_POWER,4f).build()));
     public static final RegistryObject<Item> DYNAMO_UPGRADE_1 = registerSimpleModel("dynamo_upgrade_1",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_DYNAMO)
-            .mod(TAG_AUGMENT_DYNAMO_ENERGY,1.5F)
-            .mod(TAG_AUGMENT_DYNAMO_POWER,4)
+            .mod(TAG_AUGMENT_DYNAMO_ENERGY,2F)
+            .mod(TAG_AUGMENT_DYNAMO_POWER,8)
             .mod(TAG_AUGMENT_DYNAMO_THROTTLE,1)
             .build()));
     public static final RegistryObject<Item> DYNAMO_UPGRADE_2 = registerSimpleModel("dynamo_upgrade_2",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_DYNAMO)
-            .mod(TAG_AUGMENT_DYNAMO_ENERGY,2)
-            .mod(TAG_AUGMENT_DYNAMO_POWER,16)
+            .mod(TAG_AUGMENT_DYNAMO_ENERGY,4)
+            .mod(TAG_AUGMENT_DYNAMO_POWER,32)
             .mod(TAG_AUGMENT_DYNAMO_THROTTLE,1).build()));
     public static final RegistryObject<Item> MACHINE_CATALYST_UPGRADE_1 = registerSimpleModel("machine_catalyst_upgrade_1",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_MACHINE)
