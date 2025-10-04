@@ -32,5 +32,6 @@ public class TltTechModifiers {
     public static final StaticModifier<FluxSlashModifier> FLUX_SLASH = MODIFIERS.register("flux_slash", FluxSlashModifier::new);
     public static final StaticModifier<FluxInfinity> FLUX_INFINITY = MODIFIERS.register("flux_infinity", FluxInfinity::new);
     public static final StaticModifier<AlfBless> ALF_BLESS = MODIFIERS.register("alf_bless", AlfBless::new);
+    public static final StaticModifier<MoltenCore> MOLTEN_CORE = MODIFIERS.register("molten_core", MoltenCore::new);
 
 }

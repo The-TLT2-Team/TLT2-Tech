@@ -27,7 +27,7 @@ public class FieryFlyingSword extends BasicFlyingSwordEntity {
         if (this.getOwner() instanceof Player player&&!this.level().isClientSide) {
             target.getPersistentData().putInt(CommonUtil.KEY_ATTACKER,player.getId());
             var instance = EntityTickerManager.getInstance(target);
-            instance.addTicker(new EntityTickerInstance(TltTechEntityTickers.FIERY.get(),1,400),(i1,i2)->Math.min(300,i1+i2),Integer::max);
+            instance.addTicker(new EntityTickerInstance(TltTechEntityTickers.FIERY.get(),1,400),Integer::sum,Integer::max);
         }
     }
 }
