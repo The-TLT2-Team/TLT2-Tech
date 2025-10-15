@@ -9,6 +9,7 @@
     "immersive.IMultiblockRecipeAccessor",
     "immersive.MineralVeinMixin",
     "mekanism.FissionReactorValidatorMixin",
+    "mekanism.SPSMultiBlockDataMixin",
     "pnc.AbstractAirHandlingBlockEntityMixin",
     "pnc.AirGrateMixin",
     "pnc.ApplicableUpgradesDBMixin",

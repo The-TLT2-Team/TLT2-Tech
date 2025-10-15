@@ -39,7 +39,7 @@ public class TltTechItems {
             .type(TAG_AUGMENT_TYPE_UPGRADE)
             .mod(TAG_AUGMENT_RF_XFER,6)
             .mod(TAG_AUGMENT_BASE_MOD,6)
-            .mod(TAG_MACHINE_PARALLEL,1)
+            .mod(TAG_MACHINE_PARALLEL,3)
             .mod(TAG_AUGMENT_MACHINE_ENERGY,1.2f).build()));
     public static final RegistryObject<Item> UPGRADE_AUGMENT_5 = ITEMS.register("upgrade_augment_densium",()->new AugmentItem(new Item.Properties(), AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_UPGRADE)
@@ -52,7 +52,7 @@ public class TltTechItems {
             .type(TAG_AUGMENT_TYPE_UPGRADE)
             .mod(TAG_AUGMENT_BASE_MOD,16)
             .mod(TAG_AUGMENT_RF_XFER,16)
-            .mod(TAG_MACHINE_PARALLEL,15)
+            .mod(TAG_MACHINE_PARALLEL,31)
             .mod(TAG_AUGMENT_MACHINE_ENERGY,4)
             .mod(TAG_AUGMENT_MACHINE_CATALYST,0.1f)
             .mod(TAG_AUGMENT_MACHINE_PRIMARY,1f)
@@ -61,13 +61,13 @@ public class TltTechItems {
             .mod(TAG_AUGMENT_DYNAMO_POWER,4f).build()));
     public static final RegistryObject<Item> DYNAMO_UPGRADE_1 = registerSimpleModel("dynamo_upgrade_1",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_DYNAMO)
-            .mod(TAG_AUGMENT_DYNAMO_ENERGY,2F)
+            .mod(TAG_AUGMENT_DYNAMO_ENERGY,1.5F)
             .mod(TAG_AUGMENT_DYNAMO_POWER,8)
             .mod(TAG_AUGMENT_DYNAMO_THROTTLE,1)
             .build()));
     public static final RegistryObject<Item> DYNAMO_UPGRADE_2 = registerSimpleModel("dynamo_upgrade_2",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_DYNAMO)
-            .mod(TAG_AUGMENT_DYNAMO_ENERGY,4)
+            .mod(TAG_AUGMENT_DYNAMO_ENERGY,2)
             .mod(TAG_AUGMENT_DYNAMO_POWER,32)
             .mod(TAG_AUGMENT_DYNAMO_THROTTLE,1).build()));
     public static final RegistryObject<Item> MACHINE_CATALYST_UPGRADE_1 = registerSimpleModel("machine_catalyst_upgrade_1",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
@@ -86,13 +86,13 @@ public class TltTechItems {
             .type(TAG_AUGMENT_TYPE_MACHINE)
             .mod(TAG_AUGMENT_MACHINE_ENERGY,1.2f)
             .mod(TAG_AUGMENT_MACHINE_SPEED,2.5f)
-            .mod(TAG_MACHINE_PARALLEL,1)
+            .mod(TAG_MACHINE_PARALLEL,2)
             .build()));
     public static final RegistryObject<Item> MACHINE_SPEED_UPGRADE_2 = registerSimpleModel("machine_speed_upgrade_2",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_MACHINE)
             .mod(TAG_AUGMENT_MACHINE_ENERGY,1.1f)
             .mod(TAG_AUGMENT_MACHINE_SPEED,7.5f)
-            .mod(TAG_MACHINE_PARALLEL,4)
+            .mod(TAG_MACHINE_PARALLEL,16)
             .build()));
     public static final RegistryObject<Item> RANGE_UPGRADE_1 = registerSimpleModel("range_upgrade_1",()->new AugmentItem(new Item.Properties(),AugmentDataHelper.builder()
             .type(TAG_AUGMENT_TYPE_AREA_EFFECT)

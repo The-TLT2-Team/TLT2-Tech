@@ -59,7 +59,7 @@ public class BasicFlyingSwordEntity extends Projectile {
     public float initialRotation;
     public List<Vec3> positionCache = new ArrayList<>();
     public List<Vec3> rotationCache = new ArrayList<>();
-    public int lifeTime = 300;
+    public int lifeTime = 200;
     public boolean isTrueHurt = false;
 
     @Override

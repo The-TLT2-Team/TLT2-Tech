@@ -92,7 +92,7 @@ public class ElementalSlashEntity extends Projectile {
                 }
             }
         }
-        if (this.tickCount>200){
+        if (this.tickCount>100){
             this.discard();
         }
         super.tick();

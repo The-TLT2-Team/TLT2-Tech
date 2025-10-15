@@ -2,6 +2,8 @@ package com.fg.tlt_tech.content.tool.modifier;
 
 import com.c2h6s.etstlib.tool.modifiers.base.BasicFEModifier;
 import com.c2h6s.etstlib.util.ToolEnergyUtil;
+import net.minecraft.world.entity.LivingEntity;
+import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.modifiers.ModifierEntry;
 import slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
@@ -23,5 +25,15 @@ public class HyperFluxLoaded extends BasicFEModifier {
     @Override
     public int getCapacity(ModifierEntry modifierEntry) {
         return 1000000*modifierEntry.getLevel();
+    }
+
+    @Override
+    public int modifierDamageTool(IToolStackView tool, ModifierEntry modifier, int amount, @Nullable LivingEntity holder) {
+        if (ToolEnergyUtil.extractEnergy(tool, 250 * amount, true) >= 250) {
+            int reduce = ToolEnergyUtil.extractEnergy(tool, 250 * amount, false) / 250;
+            return reduce >= amount ? 0 : amount - reduce;
+        } else {
+            return amount;
+        }
     }
 }
